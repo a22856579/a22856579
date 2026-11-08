@@ -25,3 +25,9 @@
 4. Safari 點「分享」→「加入主畫面」，之後就能像 App 一樣從主畫面開啟。
 
 > 以上方式適合本機預覽；`localStorage` 資料留在目前使用的瀏覽器與裝置，不會自動同步到其他裝置。iPhone 若無法連線，請確認同一 Wi-Fi 並允許電腦防火牆的私人網路連線。
+
+## 發佈到 GitHub Pages
+
+首次啟用時，請到儲存庫的 **Settings → Pages**，在 **Build and deployment → Source** 選擇 **GitHub Actions**。之後推送到 `master` 分支時，GitHub Actions 會自動部署網站。
+
+網站網址：<https://a22856579.github.io/a22856579/>
