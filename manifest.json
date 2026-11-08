@@ -1,0 +1,10 @@
+{
+  "name": "日常清單｜代辦事項",
+  "short_name": "日常清單",
+  "description": "簡單安排每天要完成的事。",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f2",
+  "theme_color": "#f5f6f2"
+}

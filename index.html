@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>日常清單｜代辦事項</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">✓</span><span>日常清單</span></div>
+        <button class="icon-button" id="todayButton" aria-label="回到全部待辦" title="回到全部待辦">⌂</button>
+      </header>
+
+      <section class="welcome">
+        <p class="eyebrow" id="todayLabel">今天</p>
+        <h1>把每件事，<span>慢慢完成。</span></h1>
+        <p class="subtitle">清楚安排今天，也為明天留點空間。</p>
+      </section>
+
+      <section class="summary-card" aria-label="完成進度">
+        <div class="summary-copy"><span class="summary-title">今日進度</span><span id="progressText">還沒有待辦事項</span></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+      </section>
+
+      <section class="list-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">MY TASKS</p><h2 id="listTitle">所有待辦</h2></div>
+          <span class="task-count" id="taskCount">0 件</span>
+        </div>
+        <div class="filters" role="tablist" aria-label="待辦篩選">
+          <button class="filter active" data-filter="all" role="tab" aria-selected="true">全部</button>
+          <button class="filter" data-filter="today" role="tab" aria-selected="false">今天</button>
+          <button class="filter" data-filter="upcoming" role="tab" aria-selected="false">未來</button>
+          <button class="filter" data-filter="done" role="tab" aria-selected="false">已完成</button>
+        </div>
+        <div class="category-row" id="categoryRow" aria-label="依分類篩選"></div>
+        <div class="task-list" id="taskList"></div>
+      </section>
+
+      <button class="add-button" id="addButton"><span aria-hidden="true">＋</span>新增待辦</button>
+      <p class="storage-note"><span aria-hidden="true">◉</span> 資料只儲存在這台裝置</p>
+    </main>
+
+    <dialog id="taskDialog" class="task-dialog">
+      <form id="taskForm">
+        <div class="dialog-heading"><div><p class="eyebrow" id="dialogEyebrow">NEW TASK</p><h2 id="dialogTitle">新增待辦</h2></div><button class="icon-button close-button" type="button" id="closeDialog" aria-label="關閉">×</button></div>
+        <input type="hidden" id="taskId" />
+        <label class="field-label" for="taskName">要完成什麼？</label>
+        <input class="text-input" id="taskName" maxlength="100" placeholder="例如：準備週末旅行" required />
+        <label class="field-label" for="taskDue">設定期限</label>
+        <input class="text-input" id="taskDue" type="date" />
+        <label class="field-label" for="taskCategory">選擇分類</label>
+        <select class="text-input" id="taskCategory"><option value="生活">生活</option><option value="工作">工作</option><option value="學習">學習</option><option value="其他">其他</option></select>
+        <div class="form-actions"><button type="button" class="delete-button" id="deleteButton" hidden>刪除</button><button class="save-button" type="submit" id="saveButton">儲存待辦</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
